@@ -2,10 +2,10 @@
 
 Some Practice with MatPlotLib Line Graphs using a variety of sources:
 
-* (New York Electricity Production)[https://catalog.data.gov/dataset/electric-generation-by-fuel-type-gwh-beginning-1960]
-* (Bundesliga Team Data)[https://github.com/camminady/AllBundesligaGamesEver]
-* (Points per Game by NBA Scoring Champions)[https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_annual_scoring_leaders]
-* (NBA Team Win Probabilities by Minute)[https://github.com/fivethirtyeight/data]
+* [New York Electricity Production](https://catalog.data.gov/dataset/electric-generation-by-fuel-type-gwh-beginning-1960)
+* [Bundesliga Team Data](https://github.com/camminady/AllBundesligaGamesEver)
+* [Points per Game by NBA Scoring Champions](https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_annual_scoring_leaders)
+* [NBA Team Win Probabilities by Minute](https://github.com/fivethirtyeight/data)
 
 ## Graphs
 
