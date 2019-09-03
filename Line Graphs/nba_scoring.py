@@ -11,7 +11,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 from bs4 import BeautifulSoup
 
-current_dir = os.path.normpath(f'{os.getcwd()}/Line Graph')
+current_dir = os.path.normpath(f'{os.getcwd()}/Line Graphs')
 
 td_th = re.compile(r'(th)|(td)')
 def parse_data():
@@ -77,7 +77,7 @@ if __name__ == '__main__':
     plt.ylabel('Points per Game')
     plt.tight_layout()
 
-    plt.savefig(os.path.normpath(f'{current_dir}/NBA_ppg.png'))
+    plt.savefig(os.path.normpath(f'{current_dir}/Graphs/NBA_ppg.png'))
     plt.show()
 
 

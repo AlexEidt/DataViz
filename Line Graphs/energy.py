@@ -9,7 +9,7 @@ from itertools import cycle
 from matplotlib import pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-current_dir = os.path.normpath(f'{os.getcwd()}/Line Graph')
+current_dir = os.path.normpath(f'{os.getcwd()}/Line Graphs')
 
 if __name__ == '__main__' and False:
     data = pd.read_csv(os.path.normpath(f'{current_dir}/Data/NYEnergy.csv'))

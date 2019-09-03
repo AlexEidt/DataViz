@@ -66,7 +66,7 @@ def create_graph(team):
     ax3.set_xlabel('Season')
 
     plt.tight_layout()
-    plt.savefig(os.path.normpath(f'{current_dir}/{team}_Data.png'))
+    plt.savefig(os.path.normpath(f'{current_dir}/Graphs/{team}_Data.png'))
     plt.show()
 
 

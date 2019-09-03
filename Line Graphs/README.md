@@ -15,7 +15,7 @@ Using data from `data.gov`, this animated line graph shows the different sources
 
 Script: `energy.py`
 
-<img src="NY_Energy.gif" alt="New York Energy Production by Year">
+<img src="Graphs/NY_Energy.gif" alt="New York Energy Production by Year">
 
 ***
 
@@ -28,7 +28,7 @@ The Bundesliga is a German Professional Football/Soccer league. Enter a team in 
 
 Script: `bundesliga_goals.py`
 
-<img src="Dortmund_Data.png" alt="Borussia Dortmund Scoring Data">
+<img src="Graphs/Dortmund_Data.png" alt="Borussia Dortmund Scoring Data">
 
 #### Points per Game by NBA Scoring Champions
 
@@ -36,7 +36,7 @@ Data is parsed from a Wikipedia Page showing a table of NBA Scoring Champions an
 
 Script: `nba_scoring.py`
 
-<img src="NBA_ppg.png" alt="Points per Game scored by NBA Scoring Champions">
+<img src="Graphs/NBA_ppg.png" alt="Points per Game scored by NBA Scoring Champions">
 
 #### NBA Team Win Probabilities by Minute
 
@@ -44,4 +44,4 @@ Data from a `.csv` file containing NBA Team Win Probabilites by Minute is graphe
 
 Script: `nba_win.py`
 
-<img src="WinProb_Pacific.png" alt="Pacific Division NBA Team Win Probabilities by Minute">
+<img src="Graphs/WinProb_Pacific.png" alt="Pacific Division NBA Team Win Probabilities by Minute">

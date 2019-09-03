@@ -121,7 +121,7 @@ if __name__ == '__main__':
                 horizontalalignment='right', verticalalignment='bottom', fontsize='xx-small')
 
     plt.tight_layout()
-    plt.savefig(os.path.normpath(f'{current_dir}/Code used in {dir_name}'))
+    plt.savefig(os.path.normpath(f'{current_dir}/Graphs/Code used in {dir_name}'))
     plt.show()
     
 

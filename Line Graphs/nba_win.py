@@ -7,7 +7,7 @@ import pandas as pd
 from itertools import cycle
 from matplotlib import pyplot as plt
 
-current_dir = os.path.normpath(f'{os.getcwd()}/Line Graph')
+current_dir = os.path.normpath(f'{os.getcwd()}/Line Graphs')
 
 # NBA Divisions
 divisions = {
@@ -39,5 +39,5 @@ if __name__ == '__main__':
         plt.ylabel('Win Probability (%)')
 
         plt.tight_layout()
-        plt.savefig(os.path.normpath(f'{current_dir}/WinProb_{division}.png'))
+        plt.savefig(os.path.normpath(f'{current_dir}/Graphs/WinProb_{division}.png'))
         plt.show()

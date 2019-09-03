@@ -50,7 +50,6 @@ if __name__ == '__main__':
     plt.title('Course Sections per day at UW')
     plt.ylabel('Number of Sections')
 
-    plt.legend()
     plt.tight_layout()
-    plt.savefig(f'{current_dir}/UW_Days_Offered.png')
+    plt.savefig(f'{current_dir}/Graphs/UW_Days_Offered.png')
     plt.show()

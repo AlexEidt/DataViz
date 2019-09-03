@@ -10,4 +10,4 @@ As an example, here is the Pie Chart for my [UW-Course-Tool](https://github.com/
 
 Script: `code.py`
 
-<img src="Code used in UW-Course-Tool.png" alt="Code used in UW-Course-Tool">
+<img src="Graphs/Code used in UW-Course-Tool.png" alt="Code used in UW-Course-Tool">

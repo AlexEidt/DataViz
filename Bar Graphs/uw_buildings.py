@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
     fig.suptitle('Most Commonly used Buildings at UW')
     plt.tight_layout()
-    plt.savefig(os.path.normpath(f'{current_dir}/UW_Building_Data.png'))
+    plt.savefig(os.path.normpath(f'{current_dir}/Graphs/UW_Building_Data.png'))
     plt.show()
 
 
