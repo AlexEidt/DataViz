@@ -1,5 +1,5 @@
 """Creates 3 Scatter Plots showing relational data
-of the Height of Trees to their trunk volume, diameter and circumference
+of the Height of Trees to their trunk volume and circumference
 Find data at: https://en.wikipedia.org/wiki/List_of_largest_giant_sequoias
 """
 
@@ -14,46 +14,59 @@ from matplotlib import ticker as pltticker
 
 current_dir = os.path.normpath(f'{os.getcwd()}/Scatter Plots')
 
-trees_page = Soup(requests.get('https://en.wikipedia.org/wiki/List_of_largest_giant_sequoias').text, 
-                  features='lxml')
-table = trees_page.find('table', class_='wikitable sortable')
-data = list(table.find_all('tr'))
-header = []
-th = Soup(str(data[0]), features='lxml').find_all('th')
-for i, h in enumerate(th):
-    if i not in [2, len(th) - 1]:
-        header.append(re.sub(r'\n|\[.+\]', '', h.text))
+def parse_data():
+    """Parses a Wikipedia table with information on the tallest trees on earth and converts
+    to a two-dimensional list
+    Returns
+        Tuple with the two-dimensional list representing the table contents and the header of the table  
+    """
+    trees_page = Soup(requests.get('https://en.wikipedia.org/wiki/List_of_largest_giant_sequoias').text, 
+                    features='lxml')
+    table = trees_page.find('table', class_='wikitable sortable')
+    data = list(table.find_all('tr'))
+    header = []
+    th = Soup(str(data[0]), features='lxml').find_all('th')
+    for i, h in enumerate(th):
+        if i not in [2, len(th) - 1]:
+                header.append(re.sub(r'\n|\[.+\]', '', h.text))
 
-total = []
-for i in range(1, len(data)):
-    row = []
-    cells = Soup(str(data[i]), features='lxml')
-    for td in cells.find_all('td'):
-        cell_data = re.sub(r'[(\n)((cubic)? feet)]*', '', td.text.split('(', 1)[0].strip())
-        row.append(re.sub(r'\[.+\]', '', cell_data).replace(',', '').replace(' ', ''))
-    total.append([x for i, x in enumerate(row) if i not in [2, len(row) - 1]])
+    total = []
+    for i in range(1, len(data)):
+        row = []
+        cells = Soup(str(data[i]), features='lxml')
+        for td in cells.find_all('td'):
+            cell_data = re.sub(r'[(\n)((cubic)? feet)]*', '', td.text.split('(', 1)[0].strip())
+            row.append(re.sub(r'\[.+\]', '', cell_data).replace(',', '').replace(' ', ''))
+        total.append([x for i, x in enumerate(row) if i not in [2, len(row) - 1]])
 
-df = pd.DataFrame(total, columns=header)
-df.to_csv(os.path.normpath(f'{current_dir}/Data/Largest_Trees.csv'))
-df.set_index('Rank', inplace=True)
-df = df.apply(pd.to_numeric, errors='coerce')
-df.dropna(thresh=3, inplace=True)
+    return (total, header)
 
-# Plot Data
 
-for attribute in [('Circumference', 'ft'), ('Diameter', 'ft'), ('BoleVolume', 'cubic ft')]:
+if __name__ == "__main__":
+    tree_data = parse_data()
+    # Create DataFrame using Tree Data in Pandas
+    df = pd.DataFrame(tree_data[0], columns=tree_data[1])
+    df.to_csv(os.path.normpath(f'{current_dir}/Data/Largest_Trees.csv'))
+    df.set_index('Rank', inplace=True)
+    df = df.apply(pd.to_numeric, errors='coerce')
+    df.dropna(thresh=3, inplace=True)
 
-    fig, ax = plt.subplots(1, 1)
-    plt.scatter(df['Height'], df[attribute[0]], cmap='plasma', edgecolor='green',
-                linewidth=1, alpha=0.5)
-    ax.set_title(f'Tree Height vs. {attribute[0]}')
-    ax.set_ylabel(f'{attribute[0]} ({attribute[1]})')
-    ax.set_xlabel('Height (ft)')
-    pyplot.locator_params(axis='y', nbins=10)
-    pyplot.locator_params(axis='x', nbins=10)
+    # Plot Data
 
-    plt.tight_layout()
-    plt.savefig(os.path.normpath(f'{current_dir}/Graphs/Tree_Data_{attribute[0]}.png'))
-    plt.show()
+    for attribute in [('Circumference', 'ft'), ('BoleVolume', 'cubic ft')]:
+
+        fig, ax = plt.subplots(1, 1)
+        plt.scatter(df['Height'], df[attribute[0]], cmap='plasma', edgecolor='green',
+                        linewidth=1, alpha=0.5)
+        ax.set_title(f'Tree Height vs. {attribute[0]}')
+        ax.set_ylabel(f'{attribute[0]} ({attribute[1]})')
+        ax.set_xlabel('Height (ft)')
+        # Limit x and y ticks to 10 ticks
+        pyplot.locator_params(axis='y', nbins=10)
+        pyplot.locator_params(axis='x', nbins=10)
+
+        plt.tight_layout()
+        plt.savefig(os.path.normpath(f'{current_dir}/Graphs/Tree_Data_{attribute[0]}.png'))
+        plt.show()
 
 

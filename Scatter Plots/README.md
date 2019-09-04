@@ -2,19 +2,17 @@
 
 Some Practice with MatPlotLib Scatter Plots. 
 
-## Graph
+## Graphs
 
 ### Tree Data
 
-Using data from this [Wikipedia Article](https://en.wikipedia.org/wiki/List_of_largest_giant_sequoias) on the largest trees on earth, a `.csv` file containing information from this table was created using the Script and put into the `Data` directory. This data was graphed on Scatter Plots to show the relationship between the largest trees heights and their circumferences, diameters, and volumes.
+Using data from this [Wikipedia Article](https://en.wikipedia.org/wiki/List_of_largest_giant_sequoias) on the largest trees on earth, a `.csv` file containing information from this table was created using the Script and put into the `Data` directory. This data was graphed on Scatter Plots to show the relationship between the largest trees heights and their circumferences and volumes.
 
 Script: `tallest_trees.py`
 
 <img src="Graphs/Tree_Data_BoleVolume.png" alt="Tree Height vs Volume Scatter Plot">
 
 <img src="Graphs/Tree_Data_Circumference.png" alt="Tree Height vs Circumference Scatter Plot">
-
-<img src="Graphs/Tree_Data_Diameter.png" alt="Tree Height vs Diameter Scatter Plot">
 
 ### Random
 
