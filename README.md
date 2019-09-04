@@ -4,6 +4,11 @@ Some Data Mining :construction:, Refining :wrench: and Visualizing :chart_with_u
 
 Some examples are shown below. Look in each folder or click the image to see more.
 
+Install all required packages with:
+```
+pip install -r requirements.txt
+```
+
 ## Bar Graphs
 
 <a href="https://github.com/AlexEidt/DataViz/tree/master/Bar%20Graphs">
@@ -31,5 +36,5 @@ Some examples are shown below. Look in each folder or click the image to see mor
 ## Scatter Plots
 
 <a href="https://github.com/AlexEidt/DataViz/tree/master/Scatter%20Plots">
-    <img src="Scatter Plots/Graphs/Random.png" alt="Random Data on Scatter Plot">
+    <img src="Scatter Plots/Graphs/Tree_Data_Circumference.png" alt="Tree Height vs Circumference Scatter Plot">
 </a>

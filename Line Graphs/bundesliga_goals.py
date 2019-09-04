@@ -10,6 +10,14 @@ from matplotlib import pyplot as plt
 current_dir = os.path.normpath(f'{os.getcwd()}/Line Graphs')
 
 def create_graph(team):
+    """Creates 3 line graphs representing:
+        -Goals For/Against
+        -Home/Away Goals
+        -Goal Ratio
+    For any Bundesliga Team starting 1964
+    @params
+        'team': The Bundesliga Team to create graphs for
+    """
     team_id = teams['ID'][teams['Team'] == team].squeeze()
 
     data = pd.read_csv(os.path.normpath(f'{current_dir}/Data/bundesliga_results.csv'))
