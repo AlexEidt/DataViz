@@ -1,4 +1,4 @@
-# Pie Charts
+# Scatter Plots
 
 Some Practice with MatPlotLib Scatter Plots. 
 
