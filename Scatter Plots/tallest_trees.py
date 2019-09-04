@@ -47,8 +47,8 @@ for attribute in [('Circumference', 'ft'), ('Diameter', 'ft'), ('BoleVolume', 'c
     plt.scatter(df['Height'], df[attribute[0]], cmap='plasma', edgecolor='green',
                 linewidth=1, alpha=0.5)
     ax.set_title('Tree Height vs. Circumference')
-    ax.set_xlabel(f'{attribute[0]} ({attribute[1]})')
-    ax.set_ylabel('Height (ft)')
+    ax.set_ylabel(f'{attribute[0]} ({attribute[1]})')
+    ax.set_xlabel('Height (ft)')
     pyplot.locator_params(axis='y', nbins=10)
     pyplot.locator_params(axis='x', nbins=10)
 
