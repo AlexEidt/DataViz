@@ -10,7 +10,7 @@ Using data from this [Wikipedia Article](https://en.wikipedia.org/wiki/List_of_l
 
 Script: `tallest_trees.py`
 
-<img src="Graphs/Tree_Data_BolVolume.png" alt="Tree Height vs Volume Scatter Plot">
+<img src="Graphs/Tree_Data_BoleVolume.png" alt="Tree Height vs Volume Scatter Plot">
 
 <img src="Graphs/Tree_Data_Circumference.png" alt="Tree Height vs Circumference Scatter Plot">
 
