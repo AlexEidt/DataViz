@@ -1,10 +1,7 @@
 """Creates a Scatter Plot with Randomly filled values"""
 
 import os
-import re
-import json
 import random
-from itertools import cycle
 from matplotlib import pyplot as plt
 
 current_dir = os.path.normpath(f'{os.getcwd()}/Scatter Plots')

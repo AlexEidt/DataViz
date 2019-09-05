@@ -80,10 +80,9 @@ def find_languages(dirname, code_dict, counter):
             ext = '.{}'.format(dirname.rsplit('.', 1)[-1])
             for lang, extns in code_dict.items():
                 if ext in extns:
-                    with open(dirname, mode='r', encoding='ISO-8859-1') as file:
-                        if lang not in counter:
-                            counter[lang] = 0
-                        counter[lang] += len(file.read().replace(' ', ''))
+                    if lang not in counter:
+                        counter[lang] = 0
+                    counter[lang] += int(os.stat(dirname).st_size)
     else:
         for f in os.listdir(dirname):
             file_name, ext = os.path.splitext(f)
@@ -94,8 +93,9 @@ if __name__ == '__main__':
     if 'progamming_languages.json' not in os.listdir(os.path.normpath(f'{current_dir}/Data')):
         parse_data()
 
-    dir_name = input('Enter Directory to Scan (Must be in current directory): ')
-    directory = os.path.normpath(f'{current_dir}/{dir_name}')
+    dir_name = input('Enter Directory to Scan. Must be complete file path: ')
+    directory = os.path.normpath(dir_name)
+    directory_name = directory.rsplit('\\', 1)[-1]
     with open(os.path.normpath(f'{current_dir}/Data/progamming_languages.json'), mode='r') as file:
         code_dict = json.loads(file.read())
     counter = {}
@@ -115,13 +115,13 @@ if __name__ == '__main__':
             startangle=90, shadow=True, autopct='%1.0f%%',
             rotatelabels=False)
 
-    plt.title(f'Code used in {dir_name}')
+    plt.title(f'Code used in {directory_name}')
     plt.figtext(0.90, 0.05, 
                 '*Comments included\n*Markup Languages not Included\n(except HTML, CSS)', 
                 horizontalalignment='right', verticalalignment='bottom', fontsize='xx-small')
 
     plt.tight_layout()
-    plt.savefig(os.path.normpath(f'{current_dir}/Graphs/Code used in {dir_name}'))
+    plt.savefig(os.path.normpath('{}/Graphs/Code used in {}'.format(current_dir, directory_name)))
     plt.show()
     
 
