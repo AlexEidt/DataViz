@@ -38,3 +38,7 @@ pip install -r requirements.txt
 <a href="https://github.com/AlexEidt/DataViz/tree/master/Scatter%20Plots">
     <img src="Scatter Plots/Graphs/Tree_Data_Circumference.png" alt="Tree Height vs Circumference Scatter Plot">
 </a>
+
+These examples were inspired by Corey Schafer's [tutorial series on Matplotlib](https://www.youtube.com/watch?v=UO98lJQ3QGI&list=PL-osiE80TeTvipOqomVEeZ1HRrcEvtZB_).
+
+Check him out on [Youtube](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g) and [GitHub](https://github.com/CoreyMSchafer) for more great python tutorials!

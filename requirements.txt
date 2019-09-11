@@ -3,4 +3,3 @@ requests
 pandas
 matplotlib
 tqdm
-pySankey
