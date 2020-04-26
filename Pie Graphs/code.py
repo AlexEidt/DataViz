@@ -107,6 +107,7 @@ if __name__ == '__main__':
     index = df.loc[df['Explode'] != 0].index # Index of Highest Frequency Language in Explode column
     df['Explode'][index] = 0.1
 
+
     # Create Pie Graph
     plt.style.use('fivethirtyeight')
 
